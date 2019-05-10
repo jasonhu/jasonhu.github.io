@@ -82,16 +82,18 @@ $ git push
 
 ## 可能出现的问题
 ### docker容器错误
-当前docker容器执行的时候，会将容器命令为blog_web，当再次运行的时候，如果同名字会报错，这个时候可以先手工删除原来的旧容器
+当前docker容器执行的时候，会将容器命名为blog_web，当再次运行的时候，如果同名字会报错，这个时候需要使用stop和start命令
 ``` shell
 $ docker ps -a       # 查看所有容器清单
 $ docker rm blog_web # 删除blog_web名字的容器
+$ docker stop blog_web # 停止指定容器，建议使用这种方式重启
+$ docker start blog_web # 再次启动指定容器，
 ```
 
 ### 编辑_config.yaml后
 - 当_config.yaml文件修改后，必须重新启动jekyll 的docker容器，配置才会生效，注意手工删除原来的镜像
 
 ### 图片链接
-- 当前_posts的图片链接，采用/images/xxx.png的路径
-- 由于发布网站后的uri地址为:yyyy/mm/dd/title的路径，因此没有办法使用相对路径
-- 由于不是相对路径，因此markdown的预览工具会没法看到图片
+- 由于原来的模板发布网站后的uri地址为:yyyy/mm/dd/title的路径，因此没有办法使用相对路径
+- 调整了网站post的uri地址为yyyy-mm-dd-title，这样post的uri的目录层次，和原始文档的目录层次一样
+- 因此图片地址，直接用本地的相对路径即可，在markdown preview中也可以正常浏览
