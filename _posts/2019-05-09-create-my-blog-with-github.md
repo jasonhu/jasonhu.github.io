@@ -18,22 +18,20 @@ tags: github jekyll docker
 
 
 ## github博客功能介绍
-
 在github上，创建一个新的仓库，可以配置为该仓库的内容，作为博客站点发布到github.io中。
-- 建立jasonhu.github.com名字的仓库，该仓库的博客内容，会自动发布到：[https://jasonhu.github.io](https://jasonhu.github.io)。
+- 建立jasonhu.github.com名字的仓库，名字和域名一致的仓库，会直接发布到站点的根目录；
 - 进入代码仓库，选择Settings --> Github Pages，激活该功能。
+- 该仓库的博客内容，会自动发布到：[https://jasonhu.github.io](https://jasonhu.github.io)。
 - 仓库内容发布的时候，支持jekyll转换 [http://jekyllrb.com/](http://jekyllrb.com/)。
 
 
 ## 配置博客模板
-
 克隆我的这个博客到本地，调整一些内容。
 - 修改 index.html，重新写一个站点介绍的内容；
 - 修改 _config.yaml文件，注释掉不需要的配置，并修改一些静态文本
 - 删除 _posts目录的所有*.md文件
 
 ## 编写我的第一个博客内容
-
 - 使用文本编辑器工具，譬如sublime，vscode等等；
 - 在 _posts 目录下，建立文件，名字符合格式:yyyy-mm-dd-title.md；
 - 编辑该文件，头部信息利用---来分割，写好 layout, title, categories, tags；
@@ -77,13 +75,10 @@ $ git push
 ```
 
 ## 后续
-
 * 需要具备git的基本能力
 * 需要具备docker的基本能力
 * 需要具备markdown语法的基本能力
 * 需要具备vscode的使用能力
-
----
 
 ## 可能出现的问题
 ### docker容器错误
@@ -94,7 +89,6 @@ $ docker rm blog_web # 删除blog_web名字的容器
 ```
 
 ### 编辑_config.yaml后
-
 - 当_config.yaml文件修改后，必须重新启动jekyll 的docker容器，配置才会生效，注意手工删除原来的镜像
 
 ### 图片链接
