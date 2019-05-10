@@ -43,20 +43,26 @@ tags: github jekyll docker
 - 可以参考markdown语法：[最实用的Markdown语法教程](https://www.jianshu.com/p/f3147a804368)
 
 ## 本地预览
-- 配置预览工具
-  - 本地计算机安装好docker环境
-  - 启动docker容器
+### 配置预览工具
+- 本地计算机安装好docker环境
+- 启动docker容器
 ``` shell
 $ ./run-docker.sh
 ```
-  - 打开浏览器，访问：http://localhost:4000
-  - 如果看到博客内容，就表示预览成功了
-  - run-docker.sh的文件，实际上下载了一个docker容器，自带jekyll支持，文件内容如下
+
+### 预览本地效果
+- 打开浏览器，访问：http://localhost:4000
+- 如果看到博客内容，就表示预览成功了
+![本地效果](/images/blog-local.png)
+
+### run-docker.sh
+- run-docker.sh的文件，实际上下载了一个docker容器，自带jekyll支持，文件内容如下
 ``` shell
 JEKYLL_VERSION=3.8
 docker run -d -p 4000:4000 --name blog_web --volume="$PWD:/srv/jekyll" jekyll/jekyll:$JEKYLL_VERSION   jekyll server --watch
 echo 'open brower vist http://localhost:4000'
 ```
+
 
 ## Markdown编辑器推荐
 - vscode
@@ -86,3 +92,9 @@ $ git push
 $ docker ps -a       # 查看所有容器清单
 $ docker rm blog_web # 删除blog_web名字的容器
 ```
+### 编辑_config.yaml后
+- 当_config.yaml文件修改后，必须重新启动jekyll 的docker容器，配置才会生效，注意手工删除原来的镜像
+### 图片链接
+- 当前_posts的图片链接，采用/images/xxx.png的路径
+- 由于发布网站后的uri地址为:yyyy/mm/dd/title的路径，因此没有办法使用相对路径
+- 由于不是相对路径，因此markdown的预览工具会没法看到图片
