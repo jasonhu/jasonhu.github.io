@@ -11,7 +11,8 @@ brief-intro: 技术之路，持续学习
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jasonhu.github.io" # the base hostname & protocol for your site
 
-permalink: /:year/:month/:day/:title/
+#permalink: /:year/:month/:day/:title/
+permalink: /:year-:month-:day-:title/
 
 # other links
 #twitter_username: #gaohaoyang126

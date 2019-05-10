@@ -51,7 +51,7 @@ $ ./run-docker.sh
 ### 预览本地效果
 - 打开浏览器，访问：http://localhost:4000
 - 如果看到博客内容，就表示预览成功了
-![本地效果](/images/blog-local.png)
+![本地效果](../images/blog-local.png)
 
 ### run-docker.sh
 - run-docker.sh的文件，实际上下载了一个docker容器，自带jekyll支持，文件内容如下
