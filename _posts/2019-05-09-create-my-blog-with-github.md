@@ -92,8 +92,11 @@ $ git push
 $ docker ps -a       # 查看所有容器清单
 $ docker rm blog_web # 删除blog_web名字的容器
 ```
+
 ### 编辑_config.yaml后
+
 - 当_config.yaml文件修改后，必须重新启动jekyll 的docker容器，配置才会生效，注意手工删除原来的镜像
+
 ### 图片链接
 - 当前_posts的图片链接，采用/images/xxx.png的路径
 - 由于发布网站后的uri地址为:yyyy/mm/dd/title的路径，因此没有办法使用相对路径
