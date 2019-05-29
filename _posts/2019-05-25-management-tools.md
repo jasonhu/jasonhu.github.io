@@ -2,7 +2,7 @@
 layout: post
 title: 管理工具的总结
 categories: 管理
-tags:
+tags: 
 ---
 
 * content
@@ -23,6 +23,8 @@ tags:
 - 控制：确保做对了
 
 ## 行为风格
+通过DISC的方法，分析性格，调整沟通方式。
+
 - 外向 <==> 内向
 - 理性 <==> 感性
 - Dominance：支配型，外向且理性
